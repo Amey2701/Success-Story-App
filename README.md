@@ -27,7 +27,7 @@ The **Success Story App** is a web application built with React and Firebase. It
 
 ## Demo
 
-A live demo of the app can be found [here](https://ameymali15june242.web.app).
+A live demo of the app can be found here : -  https://ameymali15june242.web.app.
 
 ## Installation
 

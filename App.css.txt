@@ -1,0 +1,66 @@
+/* Styles for the body element */
+body {
+  background-color: #f4f7f6; /* Light gray background color */
+  font-family: 'Arial', sans-serif; /* Font family for the entire page */
+  color: #333; /* Text color */
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  height: 100vh; /* Full viewport height */
+  margin: 0; /* Remove default margin */
+}
+
+/* Styles for the main container */
+.container {
+  background-color: #ffffff; /* White background color */
+  padding: 2rem; /* Padding inside the container */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle elevation effect */
+  border-radius: 8px; /* Rounded corners */
+  text-align: center; /* Center align text */
+  width: 300px; /* Width of the container */
+}
+
+/* Styles for heading elements */
+h1 {
+  font-size: 24px; /* Font size */
+  margin-bottom: 1rem; /* Bottom margin */
+  color: #4caf50; /* Green color */
+}
+
+/* Styles for form element */
+form {
+  display: flex; /* Use flexbox for form layout */
+  flex-direction: column; /* Stack form elements vertically */
+}
+
+/* Styles for text and number input fields */
+input[type="text"],
+input[type="number"] {
+  padding: 0.5rem; /* Padding inside input fields */
+  margin-bottom: 1rem; /* Bottom margin */
+  border: 1px solid #ccc; /* Border color */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+}
+
+/* Styles for submit button */
+input[type="submit"] {
+  padding: 0.5rem; /* Padding inside button */
+  background-color: #4caf50; /* Green background color */
+  color: white; /* Text color */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Cursor style */
+}
+
+/* Hover styles for submit button */
+input[type="submit"]:hover {
+  background-color: #45a049; /* Darker green background color on hover */
+}
+
+/* Styles for secondary heading */
+h2 {
+  margin-top: 1rem; /* Top margin */
+  color: #4caf50; /* Green color */
+}

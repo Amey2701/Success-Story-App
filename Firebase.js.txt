@@ -1,0 +1,25 @@
+// Import the Firebase SDK function to initialize the app
+import { initializeApp } from "firebase/app";
+
+// Import the Firebase SDK function to get the real-time database service
+import { getDatabase } from "firebase/database";
+
+// Configuration object for Firebase, containing API keys and identifiers for the project
+const firebaseConfig = {
+  apiKey: "AlzaSyBXMkEkoSEPZ8ayi5Q3yR13eiE-MM_qx0",  // Unique API key for accessing Firebase services
+  authDomain: "success15june2024.firebaseapp.com",  // Domain for Firebase Authentication
+  databaseURL: "https://success15june2024-default-rtdb.firebaseio.com",  // URL for the Firebase real-time database
+  projectId: "success15june2024",  // Unique identifier for the Firebase project
+  storageBucket: "success15june2024.appspot.com",  // Cloud Storage bucket for the project
+  messagingSenderId: "770971921736",  // Sender ID for Firebase Cloud Messaging
+  appId: "1:770971921736:web:c74c6f9cb928850281577d"  // Unique identifier for the Firebase app
+};
+
+// Initialize the Firebase app with the provided configuration
+const app = initializeApp(firebaseConfig);
+
+// Get a reference to the real-time database service
+const db = getDatabase(app);
+
+// Export the database reference for use in other parts of the application
+export default db;

@@ -1,0 +1,50 @@
+import React, { useState, useRef } from "react"; // Importing React and hooks
+import db from "./Firebase"; // Importing the Firebase database object
+import { ref, set } from "firebase/database"; // Importing functions for adding data to the Firebase database
+
+
+function Success() {
+  const rName = useRef(); // Creating a ref object for the name input field
+  const [name, setName] = useState(''); // State variable for name
+  const [company, setCompany] = useState(""); // State variable for company
+  const [pkg, setPkg] = useState(''); // State variable for package
+  const [msg, setMsg] = useState(""); // State variable for message
+
+  const hName = (event) => { setName(event.target.value); } // Function to update name state
+  const hCompany = (event) => { setCompany(event.target.value); } // Function to update company state
+  const hPkg = (event) => { setPkg(event.target.value); } // Function to update package state
+
+  const save = (event) => {
+    event.preventDefault(); // Preventing default form submission
+    let data = { name, company, pkg }; // Creating an object with current state values
+    let node = `${name.replace(/\s/g, "_")}_${new Date().getTime()}`; // Creating a unique identifier for the data node
+    let r = ref(db, "student/" + node); // Getting a reference to the database location
+    set(r, data)
+      .then(() => {
+        setMsg("Congratulations!"); // Updating the message state
+        setName(""); // Resetting the name state
+        setCompany(""); // Resetting the company state
+        setPkg(""); // Resetting the package state
+        rName.current.focus(); // Setting focus to the name input field
+      })
+      .catch((error) => {
+        console.error("Error saving data:", error); // Logging the error if data saving fails
+        setMsg("Failed to save data. Please try again.");
+      });
+  };
+
+  return (
+    <div className="container">
+      <h1>Success Story App by Amey</h1> {/* Heading */}
+      <form onSubmit={save}> {/* Form with onSubmit handler */}
+        <input type="text" placeholder="Enter Name" onChange={hName} value={name} ref={rName} /> {/* Name input field */}
+        <input type="text" placeholder="Enter Company Name" onChange={hCompany} value={company} /> {/* Company input field */}
+        <input type="number" step="any" placeholder="Enter Package" onChange={hPkg} value={pkg} /> {/* Package input field */}
+        <input type="submit" value="Save" /> {/* Submit button */}
+      </form>
+      <h2>{msg}</h2> {/* Message display */}
+    </div>
+  );
+}
+
+export default Success; // Exporting the Success component

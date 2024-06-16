@@ -1,0 +1,16 @@
+// Import the CSS file for styling
+import './App.css';
+
+// Import the Success component from './Success'
+import Success from './Success';
+
+// Define the functional component named App
+function App() {
+  // Render the Success component within the App component
+  return (
+    <Success/>
+  );
+}
+
+// Export the App component as the default export
+export default App;
